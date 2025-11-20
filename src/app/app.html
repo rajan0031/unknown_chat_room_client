@@ -1,13 +1,40 @@
-<div class="app-container">
-  <h1>{{ title() }}</h1>
-  <p>Welcome to the Angular + Socket.IO chat</p>
+<div class="container my-4">
+  <div class="card shadow-lg" style="max-width: 800px; margin: auto; height: 80vh; display: flex; flex-direction: column;">
+    
+    <!-- Header -->
+    <div class="card-header text-center bg-dark text-white">
+      <h2 class="mb-0">Anonymous Chat Room 💬</h2>
+    </div>
 
-  <ul id="messages">
-    <li *ngFor="let msg of messages()">{{ msg }}</li>
-  </ul>
+    <!-- Disclaimer -->
+    <div class="alert alert-secondary m-3 mb-0 small text-center">
+      👋 Welcome! This is a simple, anonymous chat room.  
+      🚫 No history saved, 🕵️ no names stored, 🎭 you’re completely anonymous.  
+      👀 Only current participants can see messages.  
+      🔄 Refresh the page and 💨 all messages disappear.
+    </div>
 
-  <input [(ngModel)]="newMessage" placeholder="Type a message..." />
-  <button (click)="sendMessage()">Send</button>
+    <!-- Messages -->
+    <div class="flex-grow-1 overflow-auto px-3 py-3" style="background-color: #f8f9fa;">
+      <ul id="messages" class="list-unstyled">
+        <li *ngFor="let msg of messages()" class="mb-3">
+          <div class="p-2 rounded-3 shadow-sm bg-light d-inline-block">
+            {{ msg }}
+          </div>
+        </li>
+      </ul>
+    </div>
 
-  <router-outlet></router-outlet>
+    <!-- Input area -->
+    <div class="card-footer bg-light d-flex gap-2">
+      <input [(ngModel)]="newMessage"
+             (keyup.enter)="sendMessage()"
+             type="text"
+             class="form-control"
+             placeholder="Type your message..." />
+      <button (click)="sendMessage()" class="btn btn-primary">
+        Send 🚀
+      </button>
+    </div>
+  </div>
 </div>
