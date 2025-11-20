@@ -70,9 +70,10 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
+            "outputPath": "dist/client",
+            "browser": "src/main.ts",
             "polyfills": [
-              "zone.js",
-              "zone.js/testing"
+              "zone.js"
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [

@@ -9,7 +9,10 @@ export class SocketService {
 
   constructor() {
     // Connect to backend
-    this.socket = io('http://localhost:3000');
+    // https://unknown-chat-room-server.onrender.com
+    // this.socket = io('http://localhost:3000');
+    this.socket = io('https://unknown-chat-room-server.onrender.com');
+
   }
 
   // Listen for chat messages
