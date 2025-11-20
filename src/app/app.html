@@ -1,0 +1,13 @@
+<div class="app-container">
+  <h1>{{ title() }}</h1>
+  <p>Welcome to the Angular + Socket.IO chat</p>
+
+  <ul id="messages">
+    <li *ngFor="let msg of messages()">{{ msg }}</li>
+  </ul>
+
+  <input [(ngModel)]="newMessage" placeholder="Type a message..." />
+  <button (click)="sendMessage()">Send</button>
+
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,28 @@
+.app-container {
+  text-align: center;
+  margin-top: 50px;
+  font-family: Arial, sans-serif;
+}
+
+#messages {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto;
+  max-width: 400px;
+  text-align: left;
+}
+
+#messages li {
+  padding: 5px 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+input {
+  padding: 5px;
+  width: 250px;
+}
+
+button {
+  padding: 5px 10px;
+  margin-left: 5px;
+}
